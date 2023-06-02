@@ -122,6 +122,21 @@ export default css`
     align-items: center;
     justify-content: center;
   }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .cover-button {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .true {
+    visibility: hidden;
+  }
 
   .entity-value.error {
     display: inline-block;

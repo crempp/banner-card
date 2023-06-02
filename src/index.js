@@ -414,28 +414,38 @@ class BannerCard extends LitElement {
     return html`
       <div class="entity-state" style="${this.grid(size)}">
         ${entityName(name, onClick)}
-        <span class="entity-value">
-          <ha-icon-button
-            ?disabled=${isopen}
-            icon="hass:arrow-up"
+        <div class="entity-value row">
+          <button 
+            ?disabled=${r}
             role="button"
-            @click=${this._service("cover", "open_cover", entity)}
-            ><ha-icon ?disabled=${isopen} icon="hass:arrow-up"></ha-icon
-          ></ha-icon-button>
-          <ha-icon-button
-            icon="hass:stop"
+            class="cover-button ${r}"
+            @click=${this._service("cover","open_cover",n)}
+          >
+            <ha-icon
+              icon="mdi:arrow-up-bold-circle-outline"
+            />
+          </button>
+          <button
+            ?disabled=${r}
             role="button"
-            @click=${this._service("cover", "stop_cover", entity)}
-            ><ha-icon icon="hass:stop"></ha-icon
-          ></ha-icon-button>
-          <ha-icon-button
-            ?disabled=${isclosed}
-            icon="hass:arrow-down"
+            class="cover-button ${r}"
+            @click=${this._service("cover","stop_cover",n)}
+          >
+            <ha-icon
+              icon="mdi:stop-circle-outline"
+            />
+          </button>
+          <button 
+            ?disabled=${r}
             role="button"
-            @click=${this._service("cover", "close_cover", entity)}
-            ><ha-icon ?disabled=${isclosed} icon="hass:arrow-down"></ha-icon
-          ></ha-icon-button>
-        </span>
+            class="cover-button ${r}"
+            @click=${this._service("cover","close_cover",n)}
+          >
+            <ha-icon
+              icon="mdi:arrow-down-bold-circle-outline"
+            />
+          </button>
+        </div>
       </div>
     `;
   }
